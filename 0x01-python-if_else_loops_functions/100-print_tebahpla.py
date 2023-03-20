@@ -4,4 +4,4 @@ for i in range(ord('z'), ord('a') - 1, -1):
         j = 0
     else:
         j = 1
-    print("{:s}".format(chr(i -(32 * j))), end="")
+    print("{:s}".format(chr(i - (32 * j))), end="")
