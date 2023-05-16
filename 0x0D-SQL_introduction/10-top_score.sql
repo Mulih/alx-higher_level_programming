@@ -1,3 +1,5 @@
 -- Lists all records of the second table
 
-SHOW CREATE TABLE second_table;
+SELECT `score`, `name`
+FROM second_table
+ORDER BY `score` ASC;
