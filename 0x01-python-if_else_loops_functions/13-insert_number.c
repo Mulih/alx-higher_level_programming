@@ -1,4 +1,3 @@
-/** Linked List in C Implementation code */
 #include<stdio.h>
 #include<stdlib.h>
 
