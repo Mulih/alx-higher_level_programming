@@ -1,17 +1,16 @@
-// Linked List in C Implementation code
+/** Linked List in C Implementation code */
 #include<stdio.h>
 #include<stdlib.h>
-//stdlib is included because we will be using  malloc
 
-// creating a node in linked list
+
+
 struct Node
 {
   int data;
   struct Node *next;
-  // Pointer pointing towards next node
 };
 
-//function to print the linked list
+
 void display (struct Node *node)
 {
   while (node != NULL)
@@ -29,10 +28,10 @@ struct Node *newNode (int data)
   return newNode;
 }
 
-//function to insert data in sorted position
+
 listint_t *insert_node(listint_t **head, int number);
 {
-  //If linked list is empty
+  
   if (*head == NULL || (*head)->data >= newNode->data)
     {
       new->next = *head;
@@ -40,7 +39,7 @@ listint_t *insert_node(listint_t **head, int number);
       return;
     }
 
-  //Locate the node before insertion
+
   struct Node *current = *head;
   while (current->next != NULL && current->next->data < newNode->data)
     current = current->next;
@@ -49,17 +48,17 @@ listint_t *insert_node(listint_t **head, int number);
   current->next = newNode;
 }
 
-// main function
+
 int main ()
 {
   int k;
-  //creating 4 pointers of type struct Node
-  //So these can point to address of struct type variable
+
+
   struct Node *head = NULL;
   struct Node *node2 = NULL;
   struct Node *node3 = NULL;
 
-  // allocate 3 nodes in the heap
+
   head = (struct Node *) malloc (sizeof (struct Node));
   node2 = (struct Node *) malloc (sizeof (struct Node));
   node3 = (struct Node *) malloc (sizeof (struct Node));
