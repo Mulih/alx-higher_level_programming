@@ -9,4 +9,3 @@ if (isNaN(numOccurrences)) {
     console.log('C is fun');
   }
 }
-
