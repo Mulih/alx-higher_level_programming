@@ -9,3 +9,4 @@ arg2 = process.argv[3];
 const result = arg1 + ' is ' + arg2;
 
 console.log(result);
+

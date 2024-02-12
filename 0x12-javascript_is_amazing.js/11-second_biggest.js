@@ -24,3 +24,4 @@ function findSecondLargest (numbers) {
 
 const args = process.argv.slice(2);
 console.log(findSecondLargest(args));
+
