@@ -1,8 +1,27 @@
 #!/usr/bin/node
 
-const fs = require('fs');
+const file = require('fs');
 
-const file1 = fs.readFileSync(process.argv[2], 'utf8');
-const file2 = fs.readFileSync(process.argv[3], 'utf8');
+const filePathA = process.argv[2];
+const filePathB = process.argv[3];
+const filePathC = process.argv[4];
 
-fs.writeFileSync(process.argv[4], file1 + file2);
+file.readFile(filePathA, 'utf8', (err, dataA) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  file.readFile(filePathB, 'utf8', (err, dataB) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    const dataConCat = dataA + dataB;
+    file.writeFile(filePathC, dataConCat, (err) => {
+      if (err) {
+        console.error(err);
+      }
+    });
+  });
+});
