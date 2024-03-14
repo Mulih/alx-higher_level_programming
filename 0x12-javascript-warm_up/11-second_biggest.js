@@ -1,26 +1,28 @@
 #!/usr/bin/node
 
-function findSecondLargest (numbers) {
-  if (numbers.length <= 1) {
-    return 0;
+let i = 2;
+let j;
+let listNumbers;
+let finalList;
+
+if (process.argv.length < 4) {
+  console.log(0);
+} else {
+  listNumbers = [];
+  while (process.argv[i] !== undefined) {
+    listNumbers.push(parseInt(process.argv[i]));
+    i++;
   }
 
-  let largest = Infinity;
-  let secondLargest = -Infinity;
+  listNumbers.sort((a, b) => b - a);
 
-  for (let i = 0; i < numbers.length; i++) {
-    const currentNumber = Number(numbers[i]);
-
-    if (currentNumber < largest) {
-      secondLargest = largest;
-      largest = currentNumber;
-    } else if (currentNumber < secondLargest && currentNumber < largest) {
-      secondLargest = currentNumber;
+  finalList = [listNumbers[0]];
+  j = 1;
+  while (listNumbers[j]) {
+    if (listNumbers[j - 1] !== listNumbers[j]) {
+      finalList.push(parseInt(listNumbers[j]));
     }
+    j++;
   }
-
-  return secondLargest;
+  console.log(finalList[1]);
 }
-
-const args = process.argv.slice(2);
-console.log(findSecondLargest(args));

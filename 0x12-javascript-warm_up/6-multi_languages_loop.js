@@ -1,7 +1,9 @@
 #!/usr/bin/node
 
 const lines = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+let i = 0;
 
-for (let i = 0; i < lines.length; i++) {
+while (i < 3) {
   console.log(lines[i]);
+  i++;
 }
