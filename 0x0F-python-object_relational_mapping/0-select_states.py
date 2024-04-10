@@ -1,21 +1,23 @@
 #!/usr/bin/python3
-"""module lists all the states from database"""
-
+"""
+This script lists all states from the
+database `hbtn_0e_0_usa`.
+"""
 
 import MySQLdb
 from sys import argv
 
-
 if __name__ == '__main__':
-    """main execution starts here printing all
-        states from database passed as cmd line argument """
-
+    """
+    Access to the database and get the states
+    from the database.
+    """
     db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
                          passwd=argv[2], db=argv[3])
 
-    my_cur = db.cursor()
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states")
+    rows = cur.fetchall()
 
-    my_cur.execute('SELECT * FROM states')
-    rows = my_cur.fetchall()
     for row in rows:
         print(row)
